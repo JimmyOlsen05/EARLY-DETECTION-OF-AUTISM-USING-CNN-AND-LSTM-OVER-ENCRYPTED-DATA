@@ -39,8 +39,8 @@ base_path = os.path.dirname(os.path.abspath(__file__))
 
 # Load models
 lstm_model = safe_load_model(os.path.join(base_path, 'LSTM_model.h5'))
-cnn_model = safe_load_model_from_json(os.path.join(base_path, 'CNN_MODEL.json'), os.path.join(base_path, 'CNN_MODEL_weights.h5'))
-meta_model = safe_load_model(os.path.join(base_path, 'Meta_Model.save.h5'))
+cnn_model = safe_load_model(os.path.join(base_path, 'model.keras')
+meta_model = safe_load_model(os.path.join(base_path, 'Meta_Model_.h5'))
 
 # Load additional data needed for predictions
 try:
@@ -68,7 +68,7 @@ def predict_with_cnn(image_path):
 
 # Security function to check file type
 def is_valid_image(file):
-    valid_image_formats = ["jpeg", "png", "gif", "bmp"]
+    valid_image_formats = ["jpeg", "png", "gif", "bmp","jpg"]
     file_format = imghdr.what(file)
     return file_format in valid_image_formats
 
